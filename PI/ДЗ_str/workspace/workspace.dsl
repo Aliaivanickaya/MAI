@@ -50,7 +50,7 @@ workspace "Электронная почта" {
 
             web_app = container "Веб-приложение" {
                 description "Приложение для взаимодействия с системой электронной почты через браузер"
-                technology "React, REST API"
+                technology "Python FastAPI"
                 -> api_server "Делает API запросы"
             }
 
