@@ -19,28 +19,28 @@ workspace "Электронная почта" {
             // C2
             api_server = container "Серверный API" {
                 description "Обрабатывает запросы пользователей, управляет пользователями, папками и письмами"
-                technology "Node.js, Express.js"
+                technology "Python FastAPI"
                 -> database "Читает и сохраняет данные"
 
                 // C3
                 user_management = component "Управление пользователями" {
                     description "Реализует управление данными пользователей (создание, поиск)"
-                    technology "Node.js"
+                    technology "Python FastAPI"
                 }
 
                 folder_management = component "Управление папками" {
                     description "Реализует управление почтовыми папками (создание, получение списка)"
-                    technology "Node.js"
+                    technology "Python FastAPI"
                 }
 
                 email_management = component "Управление письмами" {
                     description "Реализует создание, получение и поиск писем"
-                    technology "Node.js"
+                    technology "Python FastAPI"
                 }
 
                 api_router = component "REST API маршрутизация" {
                     description "Обрабатывает маршруты и распределяет запросы между компонентами"
-                    technology "Express.js"
+                    technology "Python FastAPI"
                 }
 
                 api_router -> user_management "Передает запросы, связанные с пользователями"
